@@ -1,0 +1,43 @@
+{
+  "name": "qpcreator",
+  "version": "1.0.0",
+  "description": "Automatic Question Paper Generator",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build-babel": "babel src --out-dir dist --extensions \".js,.jsx\"",
+    "copy-models-js": "copyfiles -u 1 \"src/models/**/*.js\" dist/",
+    "copy-middleware-js": "copyfiles -u 1 \"src/middleware/**/*.js\" dist/",
+    "build": "npm run clean && npm run build-babel && npm run copy-models-js && npm run copy-middleware-js",
+    "start": "npm run build && node dist/server.js",
+    "dev": "nodemon --exec babel-node src/server.js"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^4.3.0",
+    "axios": "^1.9.0",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fontkit": "^2.0.4",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.1",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.10",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.4",
+    "@babel/node": "^7.27.1",
+    "@babel/plugin-transform-runtime": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/runtime": "^7.27.6",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.10"
+  }
+}
