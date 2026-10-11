@@ -3,6 +3,7 @@ import { assets } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
 // import { AppContent } from '../context/AppContent'; // <<< REMOVE THIS IMPORT
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 // --- NEW IMPORT ---
 import { useAuth } from '../context/UserContext.jsx'; // <<< IMPORT useAuth hook (note: .jsx extension)

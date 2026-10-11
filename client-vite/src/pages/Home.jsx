@@ -9,7 +9,7 @@ const Home = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/auth/is-auth', { withCredentials: true })
+    axios.get('http://localhost:4000/api/auth/isAuthenticated', { withCredentials: true })
       .then(res => {
         const data = res.data;
         if (data.success && data.message === "User is authenticated") {
